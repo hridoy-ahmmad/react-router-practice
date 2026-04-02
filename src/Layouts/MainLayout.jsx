@@ -10,7 +10,7 @@ const MainLayout = () => {
 
     return (
         <CartContext.Provider value={{ carts, setCarts }} >
-            <div>
+            <div className='max-w-7xl mx-auto'>
                 <Nav />
                 {
                     navigation?.state === 'loading' ? <Loader /> : <Outlet />
