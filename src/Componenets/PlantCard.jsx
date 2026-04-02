@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 const PlantCard = ({ item }) => {
+    const navigate = useNavigate()
+
     const { price, name, image, id } = item
 
     return (
@@ -22,7 +24,9 @@ const PlantCard = ({ item }) => {
                     </div>
                 </div>
                 <div class="card-actions justify-end mt-4">
-                    <Link to={`/plant_details/${id}`} class="btn btn-primary btn-sm px-6">View Details</Link>
+                    <button
+                        onClick={() => navigate(`/plant_details/${id}`, { state: item })}
+                        class="btn btn-primary btn-sm px-6">View Details</button>
                 </div>
             </div>
         </div>

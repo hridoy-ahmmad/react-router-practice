@@ -9,6 +9,7 @@ import MainLayout from './Layouts/MainLayout'
 import PlantsDetails from './Pages/PlantsDetails'
 import axios from 'axios'
 import Loader from './Componenets/Loader'
+import Cart from './Pages/Cart'
 
 let router = createBrowserRouter([
   {
@@ -31,9 +32,13 @@ let router = createBrowserRouter([
         element: <Contact />
       },
       {
+        path: '/cart',
+        element: <Cart />
+      },
+      {
         path: '/plant_details/:id',
         element: <PlantsDetails />,
-        loader: ({ params }) => axios(`https://openapi.programming-hero.com/api/plant/${params.id}`)
+        // loader: ({ params }) => axios(`https://openapi.programming-hero.com/api/plant/${params.id}`)
       },
     ]
   },

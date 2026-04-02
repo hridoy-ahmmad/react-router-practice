@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router';
+import ThemeController from './ThemeController';
+import { ShoppingCart } from 'lucide-react';
+import CartContext from '../Provider/CartContext';
+import Cart from '../Pages/Cart';
 
 const Nav = () => {
+
+    const { carts, setCarts } = useContext(CartContext)
+    const navigate = useNavigate()
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -26,8 +34,14 @@ const Nav = () => {
                     <li><Link to={'/contact'}>Contact</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
+            <div className="navbar-end flex gap-10">
+                <div
+                    onClick={() => navigate('/cart')}
+                    className='relative'>
+                    <ShoppingCart />
+                    <p className='absolute -top-4 -right-2'> {carts.length} </p>
+                </div>
+                <ThemeController />
             </div>
         </div>
     );
