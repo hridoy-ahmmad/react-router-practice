@@ -1,18 +1,18 @@
 
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const PlantsDetails = () => {
-    const { id } = useParams()
-    const [plant, setPlant] = useState({})
-    useEffect(() => {
-        axios(`https://openapi.programming-hero.com/api/plant/${id}`)
-            .then(data => setPlant(data.data.plants))
-    }, [id])
-    console.log(plant);
-    const { image, name, description, price, category } = plant
+    // const { id } = useParams()
+    // const [plant, setPlant] = useState({})
+    // useEffect(() => {
+    //     axios(`https://openapi.programming-hero.com/api/plant/${id}`)
+    //         .then(data => setPlant(data.data.plants))
+    // }, [id])
+    // console.log(plant);
 
+    const { data } = useLoaderData()
+    console.log(data.plants);
+    const { image, name, description, price, category } = data.plants
     return (
         <div className='max-w-5xl mx-auto'>
             <div class="card bg-base-100  shadow-xl border border-gray-200">
@@ -20,7 +20,7 @@ const PlantsDetails = () => {
                     <img
                         src={image}
                         alt={name}
-                        class="rounded-xl h-52 w-full object-cover" />
+                        class="rounded-xl h-56 w-full object-contain" />
                 </figure>
                 <div class="card-body">
                     <div class=" space-y-5">
