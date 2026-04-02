@@ -8,10 +8,12 @@ import Contact from './Pages/Contact'
 import MainLayout from './Layouts/MainLayout'
 import PlantsDetails from './Pages/PlantsDetails'
 import axios from 'axios'
+import Loader from './Componenets/Loader'
 
 let router = createBrowserRouter([
   {
     Component: MainLayout,
+    hydrateFallbackElement: <Loader />,
     path: '/',
     children: [
       {

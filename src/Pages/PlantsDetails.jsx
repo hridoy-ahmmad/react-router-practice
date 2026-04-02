@@ -23,7 +23,7 @@ const PlantsDetails = () => {
                         class="rounded-xl h-56 w-full object-contain" />
                 </figure>
                 <div class="card-body">
-                    <div class=" space-y-5">
+                    <div class="space-y-5">
                         <div>
                             <h2 class="card-title text-xl font-bold text-gray-800">{name}</h2>
                             <div class="badge badge-secondary badge-outline mt-1 italic text-xs">{category}</div>

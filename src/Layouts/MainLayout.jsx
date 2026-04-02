@@ -1,12 +1,18 @@
 import React from 'react';
 import Nav from '../Componenets/Nav';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
+import Loader from '../Componenets/Loader';
 
 const MainLayout = () => {
+    const navigation = useNavigation()
+
     return (
         <div>
             <Nav />
-            <Outlet />
+            {
+                navigation?.state === 'loading' ? <Loader /> : <Outlet />
+            }
+
         </div>
     );
 };

@@ -5,7 +5,7 @@ import PlantCard from '../Componenets/plantCard';
 
 const Home = () => {
     const { plants } = useLoaderData()
-    console.log(plants);
+
 
     return (
         <div className='max-w-7xl mx-auto p-3'>
