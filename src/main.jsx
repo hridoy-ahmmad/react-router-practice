@@ -6,6 +6,7 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import MainLayout from './Layouts/MainLayout'
+import PlantsDetails from './Pages/PlantsDetails'
 
 let router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ let router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
-      }
+      },
+      {
+        path: '/plant_details/:id',
+        element: <PlantsDetails />,
+      },
     ]
   },
 
